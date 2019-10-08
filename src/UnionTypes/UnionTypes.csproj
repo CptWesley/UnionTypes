@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 	<TargetFramework>netstandard2.0</TargetFramework>
 	<CodeAnalysisRuleSet>../Ruleset.ruleset</CodeAnalysisRuleSet>
@@ -10,11 +10,38 @@
   </ItemGroup>
   
   <ItemGroup>
+    <None Include="Union.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Union.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
 	<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
 	  <PrivateAssets>all</PrivateAssets>
 	</PackageReference>
 	<PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.66">
 	  <PrivateAssets>all</PrivateAssets>
 	</PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Union.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Union.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Union.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Union.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
