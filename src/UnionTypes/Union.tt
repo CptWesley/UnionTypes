@@ -19,13 +19,16 @@ namespace UnionTypes
         /// Gets the value stored in the union.
         /// </summary>
         /// <returns>The value stored in the union. Null if no value was found.</returns>
-        public abstract object Get();
+        public abstract object GetValue();
     }
 
 <# for (int i = 2; i <= 16; i++) { string[] generics = CreateGenericNames(i); string name = $"Union<{string.Join(", ", generics)}>"; #>
     /// <summary>
-    /// Union type.
+    /// A union type.
     /// </summary>
+<# foreach (string generic in generics) { #>
+    /// <typeparam name="<#= generic #>">A possible type of the union.</typeparam>
+<# } #>
     public class <#= name #> : Union
     {
         /// <summary>
@@ -79,7 +82,7 @@ namespace UnionTypes
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
-        public void Set(<#= generic #> value)
+        public void SetValue(<#= generic #> value)
         {
             Type = typeof(<#= generic #>);
 <# for (int k = 0; k <= j; k++) {
@@ -98,10 +101,10 @@ namespace UnionTypes
 #>
 <# } #>
         }
-
 <# } #>
+
         /// <inheritdoc/>
-        public override object Get()
+        public override object GetValue()
         {
             if (Type == typeof(T1))
             {
@@ -117,10 +120,8 @@ namespace UnionTypes
             return null;
         }
     }
-
 <# } #>
 }
-
 <#+
 private string[] CreateGenericNames(int n)
 {
