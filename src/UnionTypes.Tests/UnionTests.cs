@@ -1,5 +1,4 @@
 using Xunit;
-
 using static AssertNet.Assertions;
 
 namespace UnionTypes.Tests
