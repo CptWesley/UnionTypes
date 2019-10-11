@@ -14,6 +14,11 @@ namespace UnionTypes
         public Type Type { get; protected set; }
 
         /// <summary>
+        /// Gets the possible types in the union.
+        /// </summary>
+        public abstract Type[] Types { get; }
+
+        /// <summary>
         /// Gets the value stored in the union.
         /// </summary>
         /// <returns>The value stored in the union. Null if no value was found.</returns>
@@ -33,6 +38,9 @@ namespace UnionTypes
         public Union()
         {
         }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2) };
 
         private T1 v1;
 
@@ -71,6 +79,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -122,6 +148,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -166,6 +210,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3) };
+
         private T1 v1;
 
         /// <summary>
@@ -203,6 +250,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -254,6 +319,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -300,6 +383,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -353,6 +454,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4) };
+
         private T1 v1;
 
         /// <summary>
@@ -390,6 +494,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -438,6 +560,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -490,6 +630,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -537,6 +695,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -596,6 +772,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5) };
+
         private T1 v1;
 
         /// <summary>
@@ -633,6 +812,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -684,6 +881,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -730,6 +945,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -783,6 +1016,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -831,6 +1082,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -896,6 +1165,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6) };
+
         private T1 v1;
 
         /// <summary>
@@ -933,6 +1205,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -981,6 +1271,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1033,6 +1341,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1080,6 +1406,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1134,6 +1478,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1183,6 +1545,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1254,6 +1634,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7) };
+
         private T1 v1;
 
         /// <summary>
@@ -1291,6 +1674,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1342,6 +1743,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1388,6 +1807,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1441,6 +1878,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1489,6 +1944,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1544,6 +2017,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1594,6 +2085,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1671,6 +2180,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8) };
+
         private T1 v1;
 
         /// <summary>
@@ -1708,6 +2220,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1756,6 +2286,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1808,6 +2356,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1855,6 +2421,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -1909,6 +2493,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -1958,6 +2560,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2014,6 +2634,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2065,6 +2703,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2148,6 +2804,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9) };
+
         private T1 v1;
 
         /// <summary>
@@ -2185,6 +2844,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2236,6 +2913,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2282,6 +2977,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2335,6 +3048,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2383,6 +3114,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2438,6 +3187,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2488,6 +3255,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2545,6 +3330,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2597,6 +3400,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2686,6 +3507,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10) };
+
         private T1 v1;
 
         /// <summary>
@@ -2723,6 +3547,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2771,6 +3613,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2823,6 +3683,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2870,6 +3748,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -2924,6 +3820,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -2973,6 +3887,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3029,6 +3961,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3080,6 +4030,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3138,6 +4106,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3191,6 +4177,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3286,6 +4290,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11) };
+
         private T1 v1;
 
         /// <summary>
@@ -3323,6 +4330,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3374,6 +4399,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3420,6 +4463,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3473,6 +4534,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3521,6 +4600,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3576,6 +4673,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3626,6 +4741,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3683,6 +4816,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3735,6 +4886,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3794,6 +4963,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -3848,6 +5035,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -3949,6 +5154,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12) };
+
         private T1 v1;
 
         /// <summary>
@@ -3986,6 +5194,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4034,6 +5260,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4086,6 +5330,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4133,6 +5395,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4187,6 +5467,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4236,6 +5534,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4292,6 +5608,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4343,6 +5677,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4401,6 +5753,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4454,6 +5824,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4514,6 +5902,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4569,6 +5975,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T12 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4676,6 +6100,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13) };
+
         private T1 v1;
 
         /// <summary>
@@ -4713,6 +6140,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4764,6 +6209,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4810,6 +6273,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4863,6 +6344,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -4911,6 +6410,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -4966,6 +6483,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5016,6 +6551,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5073,6 +6626,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5125,6 +6696,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5184,6 +6773,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5238,6 +6845,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5299,6 +6924,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T12 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5355,6 +6998,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T13 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5468,6 +7129,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14) };
+
         private T1 v1;
 
         /// <summary>
@@ -5505,6 +7169,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5553,6 +7235,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5605,6 +7305,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5652,6 +7370,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5706,6 +7442,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5755,6 +7509,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5811,6 +7583,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5862,6 +7652,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -5920,6 +7728,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -5973,6 +7799,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6033,6 +7877,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6088,6 +7950,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T12 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6150,6 +8030,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T13 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6207,6 +8105,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T14 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6326,6 +8242,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14), typeof(T15) };
+
         private T1 v1;
 
         /// <summary>
@@ -6363,6 +8282,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6414,6 +8351,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6460,6 +8415,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6513,6 +8486,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6561,6 +8552,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6616,6 +8625,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6666,6 +8693,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6723,6 +8768,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6775,6 +8838,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6834,6 +8915,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -6888,6 +8987,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -6949,6 +9066,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T12 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7005,6 +9140,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T13 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7068,6 +9221,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T14 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7126,6 +9297,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T15 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7251,6 +9440,9 @@ namespace UnionTypes
         {
         }
 
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14), typeof(T15), typeof(T16) };
+
         private T1 v1;
 
         /// <summary>
@@ -7288,6 +9480,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T1 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7336,6 +9546,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T2 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7388,6 +9616,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T3 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7435,6 +9681,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T4 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7489,6 +9753,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T5 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7538,6 +9820,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T6 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7594,6 +9894,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T7 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7645,6 +9963,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T8 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7703,6 +10039,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T9 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7756,6 +10110,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T10 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7816,6 +10188,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T11 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7871,6 +10261,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T12 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -7933,6 +10341,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T13 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -7990,6 +10416,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T14 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
@@ -8054,6 +10498,24 @@ namespace UnionTypes
         }
 
         /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T15 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
         /// Sets the value in the union to a new value.
         /// </summary>
         /// <param name="value">The new value.</param>
@@ -8113,6 +10575,24 @@ namespace UnionTypes
 
             value = default;
             return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T16(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T16 value))
+            {
+                return value;
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
