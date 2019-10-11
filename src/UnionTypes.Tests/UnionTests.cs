@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 using static AssertNet.Assertions;
 
@@ -80,6 +81,37 @@ namespace UnionTypes.Tests
             union.SetValue(1.0);
             AssertThat(union.Type).IsEqualTo(typeof(double));
             AssertThat(union.GetValue()).IsEqualTo(1.0);
+        }
+
+        /// <summary>
+        /// Checks that we can retrieve the possible types correctly.
+        /// </summary>
+        [Fact]
+        public void PossibleTypes()
+        {
+            Union union = new Union<int, string, double>();
+            AssertThat(union.Types).ContainsExactlyInAnyOrder(typeof(int), typeof(string), typeof(double));
+        }
+
+        /// <summary>
+        /// Checks that we can perform explicit casts.
+        /// </summary>
+        [Fact]
+        public void ExplicitCastAllowed()
+        {
+            Union<int, string> union = new Union<int, string>(80);
+            int val = (int)union;
+            AssertThat(val).IsEqualTo(80);
+        }
+
+        /// <summary>
+        /// Checks that we throw an exception on illegal casts.
+        /// </summary>
+        [Fact]
+        public void ExplicitCastNotAllowed()
+        {
+            Union<int, string> union = new Union<int, string>(80);
+            AssertThat(() => { string str = (string)union; }).ThrowsExactlyException<InvalidCastException>();
         }
     }
 }
