@@ -178,5 +178,45 @@ namespace UnionTypes.Tests
             Union<int[], string[]> union2 = new Union<int[], string[]>((string[])null);
             AssertThat(union1).IsNotEqualTo(union2).DoesNotHaveSameHashCodeAs(union2);
         }
+
+        /// <summary>
+        /// Checks that ToString works correctly when there is no type.
+        /// </summary>
+        [Fact]
+        public void ToStringNoType()
+        {
+            Union union = new Union<int, string>();
+            AssertThat(union).ToStringYields(string.Empty);
+        }
+
+        /// <summary>
+        /// Checks that ToString works correctly when there is an integer.
+        /// </summary>
+        [Fact]
+        public void ToStringInt()
+        {
+            Union union = new Union<int, string>(5433456);
+            AssertThat(union).ToStringYields("5433456");
+        }
+
+        /// <summary>
+        /// Checks that ToString works correctly when there is a string.
+        /// </summary>
+        [Fact]
+        public void ToStringString()
+        {
+            Union union = new Union<int, string>("fdsgfds");
+            AssertThat(union).ToStringYields("fdsgfds");
+        }
+
+        /// <summary>
+        /// Checks that ToString works correctly when there is a null.
+        /// </summary>
+        [Fact]
+        public void ToStringNull()
+        {
+            Union union = new Union<int, string>(null);
+            AssertThat(union).ToStringYields(string.Empty);
+        }
     }
 }
