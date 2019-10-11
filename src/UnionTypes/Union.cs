@@ -23,6 +23,11 @@ namespace UnionTypes
         /// </summary>
         /// <returns>The value stored in the union. Null if no value was found.</returns>
         public abstract object GetValue();
+
+        /// <summary>
+        /// Clears the value kept in the union.
+        /// </summary>
+        public abstract void Clear();
     }
 
     /// <summary>
@@ -103,6 +108,7 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
         }
         private T2 v2;
 
@@ -174,6 +180,14 @@ namespace UnionTypes
             if (Type == typeof(T1)) return v1;
             if (Type == typeof(T2)) return v2;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
         }
 
         /// <inheritdoc/>
@@ -296,6 +310,8 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
         }
         private T2 v2;
 
@@ -359,6 +375,7 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
         }
         private T3 v3;
 
@@ -432,6 +449,15 @@ namespace UnionTypes
             if (Type == typeof(T2)) return v2;
             if (Type == typeof(T3)) return v3;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
         }
 
         /// <inheritdoc/>
@@ -558,6 +584,9 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
         }
         private T2 v2;
 
@@ -621,6 +650,8 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
+            v4 = default;
         }
         private T3 v3;
 
@@ -685,6 +716,7 @@ namespace UnionTypes
             v1 = default;
             v2 = default;
             v3 = value;
+            v4 = default;
         }
         private T4 v4;
 
@@ -760,6 +792,16 @@ namespace UnionTypes
             if (Type == typeof(T3)) return v3;
             if (Type == typeof(T4)) return v4;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
         }
 
         /// <inheritdoc/>
@@ -890,6 +932,10 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
         }
         private T2 v2;
 
@@ -953,6 +999,9 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
         }
         private T3 v3;
 
@@ -1017,6 +1066,8 @@ namespace UnionTypes
             v1 = default;
             v2 = default;
             v3 = value;
+            v4 = default;
+            v5 = default;
         }
         private T4 v4;
 
@@ -1082,6 +1133,7 @@ namespace UnionTypes
             v2 = default;
             v3 = default;
             v4 = value;
+            v5 = default;
         }
         private T5 v5;
 
@@ -1159,6 +1211,17 @@ namespace UnionTypes
             if (Type == typeof(T4)) return v4;
             if (Type == typeof(T5)) return v5;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
         }
 
         /// <inheritdoc/>
@@ -1293,6 +1356,11 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
         }
         private T2 v2;
 
@@ -1356,6 +1424,10 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
         }
         private T3 v3;
 
@@ -1420,6 +1492,9 @@ namespace UnionTypes
             v1 = default;
             v2 = default;
             v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
         }
         private T4 v4;
 
@@ -1485,6 +1560,8 @@ namespace UnionTypes
             v2 = default;
             v3 = default;
             v4 = value;
+            v5 = default;
+            v6 = default;
         }
         private T5 v5;
 
@@ -1551,6 +1628,7 @@ namespace UnionTypes
             v3 = default;
             v4 = default;
             v5 = value;
+            v6 = default;
         }
         private T6 v6;
 
@@ -1630,6 +1708,18 @@ namespace UnionTypes
             if (Type == typeof(T5)) return v5;
             if (Type == typeof(T6)) return v6;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
         }
 
         /// <inheritdoc/>
@@ -1768,6 +1858,12 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
         }
         private T2 v2;
 
@@ -1831,6 +1927,11 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
         }
         private T3 v3;
 
@@ -1895,6 +1996,10 @@ namespace UnionTypes
             v1 = default;
             v2 = default;
             v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
         }
         private T4 v4;
 
@@ -1960,6 +2065,9 @@ namespace UnionTypes
             v2 = default;
             v3 = default;
             v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
         }
         private T5 v5;
 
@@ -2026,6 +2134,8 @@ namespace UnionTypes
             v3 = default;
             v4 = default;
             v5 = value;
+            v6 = default;
+            v7 = default;
         }
         private T6 v6;
 
@@ -2093,6 +2203,7 @@ namespace UnionTypes
             v4 = default;
             v5 = default;
             v6 = value;
+            v7 = default;
         }
         private T7 v7;
 
@@ -2174,6 +2285,19 @@ namespace UnionTypes
             if (Type == typeof(T6)) return v6;
             if (Type == typeof(T7)) return v7;
             return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
         }
 
         /// <inheritdoc/>
@@ -2316,6 +2440,13 @@ namespace UnionTypes
         {
             Type = typeof(T1);
             v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
         }
         private T2 v2;
 
@@ -2379,6 +2510,12 @@ namespace UnionTypes
             Type = typeof(T2);
             v1 = default;
             v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
         }
         private T3 v3;
 
@@ -2443,6 +2580,11 @@ namespace UnionTypes
             v1 = default;
             v2 = default;
             v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
         }
         private T4 v4;
 
@@ -2508,6 +2650,10 @@ namespace UnionTypes
             v2 = default;
             v3 = default;
             v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
         }
         private T5 v5;
 
@@ -2574,6 +2720,9 @@ namespace UnionTypes
             v3 = default;
             v4 = default;
             v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
         }
         private T6 v6;
 
@@ -2641,6 +2790,8 @@ namespace UnionTypes
             v4 = default;
             v5 = default;
             v6 = value;
+            v7 = default;
+            v8 = default;
         }
         private T7 v7;
 
@@ -2709,6 +2860,7 @@ namespace UnionTypes
             v5 = default;
             v6 = default;
             v7 = value;
+            v8 = default;
         }
         private T8 v8;
 
@@ -2795,6 +2947,20 @@ namespace UnionTypes
         }
 
         /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+        }
+
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8> union) return Equals(union);
@@ -2850,6 +3016,8502 @@ namespace UnionTypes
             if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
             if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
             if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    /// <typeparam name="T12">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+            v12 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+            v12 = default;
+        }
+        private T12 v12;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T12 value)
+        {
+            Type = typeof(T12);
+            v12 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T12 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T12 value)
+        {
+            if (Type == typeof(T12))
+            {
+                value = v12;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union)
+        {
+            if (union.Match(out T12 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T12 value)
+        {
+            Type = typeof(T12);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            if (Type == typeof(T12)) return v12;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+                if (Type == typeof(T12)) return (v12 == null && other.v12 == null) || v12.Equals(other.v12);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            if (Type == typeof(T12)) return v12 == null ? baseHash * 14 : v12.GetHashCode() * baseHash * 14;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            if (Type == typeof(T12)) return v12 == null ? string.Empty : v12.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    /// <typeparam name="T12">A possible type of the union.</typeparam>
+    /// <typeparam name="T13">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+            v12 = default;
+            v13 = default;
+        }
+        private T12 v12;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T12 value)
+        {
+            Type = typeof(T12);
+            v12 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T12 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T12 value)
+        {
+            if (Type == typeof(T12))
+            {
+                value = v12;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T12 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T12 value)
+        {
+            Type = typeof(T12);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = value;
+            v13 = default;
+        }
+        private T13 v13;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T13 value)
+        {
+            Type = typeof(T13);
+            v13 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T13 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T13 value)
+        {
+            if (Type == typeof(T13))
+            {
+                value = v13;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union)
+        {
+            if (union.Match(out T13 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T13 value)
+        {
+            Type = typeof(T13);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            if (Type == typeof(T12)) return v12;
+            if (Type == typeof(T13)) return v13;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+                if (Type == typeof(T12)) return (v12 == null && other.v12 == null) || v12.Equals(other.v12);
+                if (Type == typeof(T13)) return (v13 == null && other.v13 == null) || v13.Equals(other.v13);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            if (Type == typeof(T12)) return v12 == null ? baseHash * 14 : v12.GetHashCode() * baseHash * 14;
+            if (Type == typeof(T13)) return v13 == null ? baseHash * 15 : v13.GetHashCode() * baseHash * 15;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            if (Type == typeof(T12)) return v12 == null ? string.Empty : v12.ToString();
+            if (Type == typeof(T13)) return v13 == null ? string.Empty : v13.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    /// <typeparam name="T12">A possible type of the union.</typeparam>
+    /// <typeparam name="T13">A possible type of the union.</typeparam>
+    /// <typeparam name="T14">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+        private T12 v12;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T12 value)
+        {
+            Type = typeof(T12);
+            v12 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T12 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T12 value)
+        {
+            if (Type == typeof(T12))
+            {
+                value = v12;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T12 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T12 value)
+        {
+            Type = typeof(T12);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = value;
+            v13 = default;
+            v14 = default;
+        }
+        private T13 v13;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T13 value)
+        {
+            Type = typeof(T13);
+            v13 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T13 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T13 value)
+        {
+            if (Type == typeof(T13))
+            {
+                value = v13;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T13 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T13 value)
+        {
+            Type = typeof(T13);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = value;
+            v14 = default;
+        }
+        private T14 v14;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T14 value)
+        {
+            Type = typeof(T14);
+            v14 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T14 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T14 value)
+        {
+            if (Type == typeof(T14))
+            {
+                value = v14;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union)
+        {
+            if (union.Match(out T14 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T14 value)
+        {
+            Type = typeof(T14);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            if (Type == typeof(T12)) return v12;
+            if (Type == typeof(T13)) return v13;
+            if (Type == typeof(T14)) return v14;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+                if (Type == typeof(T12)) return (v12 == null && other.v12 == null) || v12.Equals(other.v12);
+                if (Type == typeof(T13)) return (v13 == null && other.v13 == null) || v13.Equals(other.v13);
+                if (Type == typeof(T14)) return (v14 == null && other.v14 == null) || v14.Equals(other.v14);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            if (Type == typeof(T12)) return v12 == null ? baseHash * 14 : v12.GetHashCode() * baseHash * 14;
+            if (Type == typeof(T13)) return v13 == null ? baseHash * 15 : v13.GetHashCode() * baseHash * 15;
+            if (Type == typeof(T14)) return v14 == null ? baseHash * 16 : v14.GetHashCode() * baseHash * 16;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            if (Type == typeof(T12)) return v12 == null ? string.Empty : v12.ToString();
+            if (Type == typeof(T13)) return v13 == null ? string.Empty : v13.ToString();
+            if (Type == typeof(T14)) return v14 == null ? string.Empty : v14.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    /// <typeparam name="T12">A possible type of the union.</typeparam>
+    /// <typeparam name="T13">A possible type of the union.</typeparam>
+    /// <typeparam name="T14">A possible type of the union.</typeparam>
+    /// <typeparam name="T15">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14), typeof(T15) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T12 v12;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T12 value)
+        {
+            Type = typeof(T12);
+            v12 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T12 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T12 value)
+        {
+            if (Type == typeof(T12))
+            {
+                value = v12;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T12 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T12 value)
+        {
+            Type = typeof(T12);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = value;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+        private T13 v13;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T13 value)
+        {
+            Type = typeof(T13);
+            v13 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T13 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T13 value)
+        {
+            if (Type == typeof(T13))
+            {
+                value = v13;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T13 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T13 value)
+        {
+            Type = typeof(T13);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = value;
+            v14 = default;
+            v15 = default;
+        }
+        private T14 v14;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T14 value)
+        {
+            Type = typeof(T14);
+            v14 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T14 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T14 value)
+        {
+            if (Type == typeof(T14))
+            {
+                value = v14;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T14 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T14 value)
+        {
+            Type = typeof(T14);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = value;
+            v15 = default;
+        }
+        private T15 v15;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T15 value)
+        {
+            Type = typeof(T15);
+            v15 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T15 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T15 value)
+        {
+            if (Type == typeof(T15))
+            {
+                value = v15;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union)
+        {
+            if (union.Match(out T15 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T15 value)
+        {
+            Type = typeof(T15);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            if (Type == typeof(T12)) return v12;
+            if (Type == typeof(T13)) return v13;
+            if (Type == typeof(T14)) return v14;
+            if (Type == typeof(T15)) return v15;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+                if (Type == typeof(T12)) return (v12 == null && other.v12 == null) || v12.Equals(other.v12);
+                if (Type == typeof(T13)) return (v13 == null && other.v13 == null) || v13.Equals(other.v13);
+                if (Type == typeof(T14)) return (v14 == null && other.v14 == null) || v14.Equals(other.v14);
+                if (Type == typeof(T15)) return (v15 == null && other.v15 == null) || v15.Equals(other.v15);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            if (Type == typeof(T12)) return v12 == null ? baseHash * 14 : v12.GetHashCode() * baseHash * 14;
+            if (Type == typeof(T13)) return v13 == null ? baseHash * 15 : v13.GetHashCode() * baseHash * 15;
+            if (Type == typeof(T14)) return v14 == null ? baseHash * 16 : v14.GetHashCode() * baseHash * 16;
+            if (Type == typeof(T15)) return v15 == null ? baseHash * 17 : v15.GetHashCode() * baseHash * 17;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            if (Type == typeof(T12)) return v12 == null ? string.Empty : v12.ToString();
+            if (Type == typeof(T13)) return v13 == null ? string.Empty : v13.ToString();
+            if (Type == typeof(T14)) return v14 == null ? string.Empty : v14.ToString();
+            if (Type == typeof(T15)) return v15 == null ? string.Empty : v15.ToString();
+            return string.Empty;
+        }
+    }
+    /// <summary>
+    /// A union type.
+    /// </summary>
+    /// <typeparam name="T1">A possible type of the union.</typeparam>
+    /// <typeparam name="T2">A possible type of the union.</typeparam>
+    /// <typeparam name="T3">A possible type of the union.</typeparam>
+    /// <typeparam name="T4">A possible type of the union.</typeparam>
+    /// <typeparam name="T5">A possible type of the union.</typeparam>
+    /// <typeparam name="T6">A possible type of the union.</typeparam>
+    /// <typeparam name="T7">A possible type of the union.</typeparam>
+    /// <typeparam name="T8">A possible type of the union.</typeparam>
+    /// <typeparam name="T9">A possible type of the union.</typeparam>
+    /// <typeparam name="T10">A possible type of the union.</typeparam>
+    /// <typeparam name="T11">A possible type of the union.</typeparam>
+    /// <typeparam name="T12">A possible type of the union.</typeparam>
+    /// <typeparam name="T13">A possible type of the union.</typeparam>
+    /// <typeparam name="T14">A possible type of the union.</typeparam>
+    /// <typeparam name="T15">A possible type of the union.</typeparam>
+    /// <typeparam name="T16">A possible type of the union.</typeparam>
+    public class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : Union
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        public Union()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override Type[] Types => new Type[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8), typeof(T9), typeof(T10), typeof(T11), typeof(T12), typeof(T13), typeof(T14), typeof(T15), typeof(T16) };
+
+        private T1 v1;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T1 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T1 value)
+        {
+            if (Type == typeof(T1))
+            {
+                value = v1;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T1 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T1 value)
+        {
+            Type = typeof(T1);
+            v1 = value;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T2 v2;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T2 value)
+        {
+            Type = typeof(T2);
+            v2 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T2 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T2 value)
+        {
+            if (Type == typeof(T2))
+            {
+                value = v2;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T2 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T2 value)
+        {
+            Type = typeof(T2);
+            v1 = default;
+            v2 = value;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T3 v3;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T3 value)
+        {
+            Type = typeof(T3);
+            v3 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T3 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T3 value)
+        {
+            if (Type == typeof(T3))
+            {
+                value = v3;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T3 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T3 value)
+        {
+            Type = typeof(T3);
+            v1 = default;
+            v2 = default;
+            v3 = value;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T4 v4;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T4 value)
+        {
+            Type = typeof(T4);
+            v4 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T4 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T4 value)
+        {
+            if (Type == typeof(T4))
+            {
+                value = v4;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T4 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T4 value)
+        {
+            Type = typeof(T4);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = value;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T5 v5;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T5 value)
+        {
+            Type = typeof(T5);
+            v5 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T5 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T5 value)
+        {
+            if (Type == typeof(T5))
+            {
+                value = v5;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T5 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T5 value)
+        {
+            Type = typeof(T5);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = value;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T6 v6;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T6 value)
+        {
+            Type = typeof(T6);
+            v6 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T6 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T6 value)
+        {
+            if (Type == typeof(T6))
+            {
+                value = v6;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T6 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T6 value)
+        {
+            Type = typeof(T6);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = value;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T7 v7;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T7 value)
+        {
+            Type = typeof(T7);
+            v7 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T7 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T7 value)
+        {
+            if (Type == typeof(T7))
+            {
+                value = v7;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T7 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T7 value)
+        {
+            Type = typeof(T7);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = value;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T8 v8;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T8 value)
+        {
+            Type = typeof(T8);
+            v8 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T8 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T8 value)
+        {
+            if (Type == typeof(T8))
+            {
+                value = v8;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T8 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T8 value)
+        {
+            Type = typeof(T8);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = value;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T9 v9;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T9 value)
+        {
+            Type = typeof(T9);
+            v9 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T9 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T9 value)
+        {
+            if (Type == typeof(T9))
+            {
+                value = v9;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T9 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T9 value)
+        {
+            Type = typeof(T9);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = value;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T10 v10;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T10 value)
+        {
+            Type = typeof(T10);
+            v10 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T10 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T10 value)
+        {
+            if (Type == typeof(T10))
+            {
+                value = v10;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T10 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T10 value)
+        {
+            Type = typeof(T10);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = value;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T11 v11;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T11 value)
+        {
+            Type = typeof(T11);
+            v11 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T11 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T11 value)
+        {
+            if (Type == typeof(T11))
+            {
+                value = v11;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T11 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T11 value)
+        {
+            Type = typeof(T11);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = value;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T12 v12;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T12 value)
+        {
+            Type = typeof(T12);
+            v12 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T12 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T12 value)
+        {
+            if (Type == typeof(T12))
+            {
+                value = v12;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T12 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T12 value)
+        {
+            Type = typeof(T12);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = value;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T13 v13;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T13 value)
+        {
+            Type = typeof(T13);
+            v13 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T13 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T13 value)
+        {
+            if (Type == typeof(T13))
+            {
+                value = v13;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T13 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T13 value)
+        {
+            Type = typeof(T13);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = value;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+        private T14 v14;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T14 value)
+        {
+            Type = typeof(T14);
+            v14 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T14 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T14 value)
+        {
+            if (Type == typeof(T14))
+            {
+                value = v14;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T14 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T14 value)
+        {
+            Type = typeof(T14);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = value;
+            v15 = default;
+            v16 = default;
+        }
+        private T15 v15;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T15 value)
+        {
+            Type = typeof(T15);
+            v15 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T15 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T15 value)
+        {
+            if (Type == typeof(T15))
+            {
+                value = v15;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T15 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T15 value)
+        {
+            Type = typeof(T15);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = value;
+            v16 = default;
+        }
+        private T16 v16;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> class.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        public Union(T16 value)
+        {
+            Type = typeof(T16);
+            v16 = value;
+        }
+
+        /// <summary>
+        /// Performs an implicit conversion from one of it's union types to to <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T16 value)
+            => new Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(value);
+
+        /// <summary>
+        /// Tries to retrieve the value of the given type from the union.
+        /// </summary>
+        /// <param name="value">The value in the union.</param>
+        /// <returns>True if the union contained a value of that type, false otherwise.</returns>
+        public bool Match(out T16 value)
+        {
+            if (Type == typeof(T16))
+            {
+                value = v16;
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Union{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> to a contained type.
+        /// </summary>
+        /// <param name="union">The union.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        /// <exception cref="InvalidCastException">Thrown when the type of the value contained in the union is not correct./></exception>
+        public static explicit operator T16(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union)
+        {
+            if (union.Match(out T16 value)) return value;
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Sets the value in the union to a new value.
+        /// </summary>
+        /// <param name="value">The new value.</param>
+        public void SetValue(T16 value)
+        {
+            Type = typeof(T16);
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = value;
+        }
+
+        /// <inheritdoc/>
+        public override object GetValue()
+        {
+            if (Type == typeof(T1)) return v1;
+            if (Type == typeof(T2)) return v2;
+            if (Type == typeof(T3)) return v3;
+            if (Type == typeof(T4)) return v4;
+            if (Type == typeof(T5)) return v5;
+            if (Type == typeof(T6)) return v6;
+            if (Type == typeof(T7)) return v7;
+            if (Type == typeof(T8)) return v8;
+            if (Type == typeof(T9)) return v9;
+            if (Type == typeof(T10)) return v10;
+            if (Type == typeof(T11)) return v11;
+            if (Type == typeof(T12)) return v12;
+            if (Type == typeof(T13)) return v13;
+            if (Type == typeof(T14)) return v14;
+            if (Type == typeof(T15)) return v15;
+            if (Type == typeof(T16)) return v16;
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public override void Clear()
+        {
+            Type = null;
+            v1 = default;
+            v2 = default;
+            v3 = default;
+            v4 = default;
+            v5 = default;
+            v6 = default;
+            v7 = default;
+            v8 = default;
+            v9 = default;
+            v10 = default;
+            v11 = default;
+            v12 = default;
+            v13 = default;
+            v14 = default;
+            v15 = default;
+            v16 = default;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> union) return Equals(union);
+            return false;
+        }
+
+        /// <summary>
+        /// Compares if another union of the same type is equal to this union.
+        /// </summary>
+        /// <param name="other">The union to compare to.</param>
+        /// <returns>True if the union is equal, false otherwise.</returns>
+        public bool Equals(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> other)
+        {
+            if (Type == other.Type)
+            {
+                if (Type == typeof(T1)) return (v1 == null && other.v1 == null) || v1.Equals(other.v1);
+                if (Type == typeof(T2)) return (v2 == null && other.v2 == null) || v2.Equals(other.v2);
+                if (Type == typeof(T3)) return (v3 == null && other.v3 == null) || v3.Equals(other.v3);
+                if (Type == typeof(T4)) return (v4 == null && other.v4 == null) || v4.Equals(other.v4);
+                if (Type == typeof(T5)) return (v5 == null && other.v5 == null) || v5.Equals(other.v5);
+                if (Type == typeof(T6)) return (v6 == null && other.v6 == null) || v6.Equals(other.v6);
+                if (Type == typeof(T7)) return (v7 == null && other.v7 == null) || v7.Equals(other.v7);
+                if (Type == typeof(T8)) return (v8 == null && other.v8 == null) || v8.Equals(other.v8);
+                if (Type == typeof(T9)) return (v9 == null && other.v9 == null) || v9.Equals(other.v9);
+                if (Type == typeof(T10)) return (v10 == null && other.v10 == null) || v10.Equals(other.v10);
+                if (Type == typeof(T11)) return (v11 == null && other.v11 == null) || v11.Equals(other.v11);
+                if (Type == typeof(T12)) return (v12 == null && other.v12 == null) || v12.Equals(other.v12);
+                if (Type == typeof(T13)) return (v13 == null && other.v13 == null) || v13.Equals(other.v13);
+                if (Type == typeof(T14)) return (v14 == null && other.v14 == null) || v14.Equals(other.v14);
+                if (Type == typeof(T15)) return (v15 == null && other.v15 == null) || v15.Equals(other.v15);
+                if (Type == typeof(T16)) return (v16 == null && other.v16 == null) || v16.Equals(other.v16);
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int baseHash = GetType().GetHashCode();
+
+            if (Type == typeof(T1)) return v1 == null ? baseHash * 3 : v1.GetHashCode() * baseHash * 3;
+            if (Type == typeof(T2)) return v2 == null ? baseHash * 4 : v2.GetHashCode() * baseHash * 4;
+            if (Type == typeof(T3)) return v3 == null ? baseHash * 5 : v3.GetHashCode() * baseHash * 5;
+            if (Type == typeof(T4)) return v4 == null ? baseHash * 6 : v4.GetHashCode() * baseHash * 6;
+            if (Type == typeof(T5)) return v5 == null ? baseHash * 7 : v5.GetHashCode() * baseHash * 7;
+            if (Type == typeof(T6)) return v6 == null ? baseHash * 8 : v6.GetHashCode() * baseHash * 8;
+            if (Type == typeof(T7)) return v7 == null ? baseHash * 9 : v7.GetHashCode() * baseHash * 9;
+            if (Type == typeof(T8)) return v8 == null ? baseHash * 10 : v8.GetHashCode() * baseHash * 10;
+            if (Type == typeof(T9)) return v9 == null ? baseHash * 11 : v9.GetHashCode() * baseHash * 11;
+            if (Type == typeof(T10)) return v10 == null ? baseHash * 12 : v10.GetHashCode() * baseHash * 12;
+            if (Type == typeof(T11)) return v11 == null ? baseHash * 13 : v11.GetHashCode() * baseHash * 13;
+            if (Type == typeof(T12)) return v12 == null ? baseHash * 14 : v12.GetHashCode() * baseHash * 14;
+            if (Type == typeof(T13)) return v13 == null ? baseHash * 15 : v13.GetHashCode() * baseHash * 15;
+            if (Type == typeof(T14)) return v14 == null ? baseHash * 16 : v14.GetHashCode() * baseHash * 16;
+            if (Type == typeof(T15)) return v15 == null ? baseHash * 17 : v15.GetHashCode() * baseHash * 17;
+            if (Type == typeof(T16)) return v16 == null ? baseHash * 18 : v16.GetHashCode() * baseHash * 18;
+            return baseHash * 2;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            if (Type == typeof(T1)) return v1 == null ? string.Empty : v1.ToString();
+            if (Type == typeof(T2)) return v2 == null ? string.Empty : v2.ToString();
+            if (Type == typeof(T3)) return v3 == null ? string.Empty : v3.ToString();
+            if (Type == typeof(T4)) return v4 == null ? string.Empty : v4.ToString();
+            if (Type == typeof(T5)) return v5 == null ? string.Empty : v5.ToString();
+            if (Type == typeof(T6)) return v6 == null ? string.Empty : v6.ToString();
+            if (Type == typeof(T7)) return v7 == null ? string.Empty : v7.ToString();
+            if (Type == typeof(T8)) return v8 == null ? string.Empty : v8.ToString();
+            if (Type == typeof(T9)) return v9 == null ? string.Empty : v9.ToString();
+            if (Type == typeof(T10)) return v10 == null ? string.Empty : v10.ToString();
+            if (Type == typeof(T11)) return v11 == null ? string.Empty : v11.ToString();
+            if (Type == typeof(T12)) return v12 == null ? string.Empty : v12.ToString();
+            if (Type == typeof(T13)) return v13 == null ? string.Empty : v13.ToString();
+            if (Type == typeof(T14)) return v14 == null ? string.Empty : v14.ToString();
+            if (Type == typeof(T15)) return v15 == null ? string.Empty : v15.ToString();
+            if (Type == typeof(T16)) return v16 == null ? string.Empty : v16.ToString();
             return string.Empty;
         }
     }
